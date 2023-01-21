@@ -1,5 +1,5 @@
 import React from 'react';
-import PhysicalFitness from './Components/physicalFitness';
+import PhysicalFitness from './Pages/PhysicalFitness';
 
 const App = () => {
   return (
