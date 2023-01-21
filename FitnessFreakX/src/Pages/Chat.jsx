@@ -17,7 +17,6 @@ const Chat = () => {
     setUserDetails(user);
 
 
-
     },[])
 
     useEffect(()=>{
