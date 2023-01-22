@@ -32,16 +32,22 @@ const Chat = () => {
 
         database.createDocument("63cc20e1e6d14732003c",'unique()',{
             message:messageInput,
-            name:userDetails.name
+            name:userDetails.$id
         }).then(res => setMessages([...messages,{message:messageInput,name:userDetails.name }]),err => console.log(err))
 
         messageInputRef.current.value=''
     }
-
+    let x=1;
+if(x==1){
     return (
         <div>
             {userDetails && (
             <>
+             <div className="welcome text-center">
+                    <h1 className='text-2xl font-bold'>Hello <span className='text-blue-700'>{userDetails.$id},</span></h1>
+                    <p>You can chat with strangers and make some friends.</p>
+                    <h2>You should behave in this chat</h2>
+                </div>
             <div><h1>Welcome</h1></div>
             <div>
                 {messages.map((message,index) => {<Messages message={message.message} name={message.name}/>} )}
@@ -59,6 +65,13 @@ const Chat = () => {
             )}
         </div>
     );
+}
+return(<>
+    <h1>Please Login to see this.</h1>
+    <button><Link to={'/login'}>Login</Link></button>
+  </>
+  )
+   
 }
 
 export default Chat;

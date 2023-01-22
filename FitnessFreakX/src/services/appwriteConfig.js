@@ -8,4 +8,5 @@ client
 
 export const account=new Account(client);
 
-export const database=new Databases(Client,'63cc1bf61423a05fd514')
+export const database=new Databases(Client,'63cc1bf61423a05fd514');
+

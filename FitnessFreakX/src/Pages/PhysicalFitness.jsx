@@ -27,19 +27,19 @@ export default function PhysicalFitness() {
 
  
   return (
-    <div className="PhysicalFitness border-2 border-slate-200">
+    <div className="PhysicalFitness ">
 
-      <h1 className='italic text-4xl font-extrabold'>FitnessFreak</h1>
-     <div className="searchBox border-2 border-slate-200">
-     <input type="text" onChange={e=>setMuscle(e.target.value)} className='w-96 h-5 rounded-md '/>
+     <div className="searchBox ">
+     <input type="text" onChange={e=>setMuscle(e.target.value)} className='w-10/12 h-9 bg-fuchsia-200 rounded-md px-5 my-4' placeholder='Enter muscle'/>
 
      </div>
 
-      <div className="exerciseContainer w-full h-5/6  flex  p-0.5 border-2 border-slate-200">
+      <div className="exerciseContainer w-full h-5/6  flex  p-0.5 ">
      
-     <div className="bodyPart w-2/12 h-full flex flex-col items-start  border-2 border-slate-200">
+     <div className="bodyPart w-2/12 h-full flex flex-col items-start  mr-1 text-fuchsia-400 cursor-pointer italic">
+     
       {
-        muscleData.map(x =>  <li className='text-base font-normal' key={x.id}>{x.muscle}</li>)
+        muscleData.map(x =>  <li className='text-lg font-normal cursor-pointer mb-4' key={x.id} onClick={()=>setMuscle(x.muscle)}>{x.muscle}</li>)
       }
      
      
@@ -48,15 +48,14 @@ export default function PhysicalFitness() {
      
       
 
-      <div className="exerciseList w-8/12 h-full border-2 border-slate-200">
+      <div className="exerciseList w-8/12 h-full  ">
     
-      {exercises.map(x=>  <div className="exerciseName h-full border-2 border-slate-200 py-px my-px" key={x.name}>
-        <h2 >{x.name}</h2>
-        <li>muscle:{x.muscle}</li>
-        <li>equipment:{x.equipment}</li>
-        <li>difficulty:{x.difficulty}</li>
-
-        <li>instructions:{x.instructions}</li>
+      {exercises.map(x=>  <div className="exerciseName h-full border-2 border-slate-200 p-3 mb-3 glassBg text-white" key={x.name}>
+        <h2 className='font-bold text-xl italic'>{x.name}</h2>
+        <li className='my-3'><b>muscle:</b> {x.muscle}</li>
+        <li   className='my-3'><b> equipment:</b> {x.equipment}</li>
+        <li  className='my-3'><b>difficulty:</b> {x.difficulty}</li>
+        <li className='my-3'><b>instructions:</b> {x.instructions}</li>
         </div>)}
       
       </div>

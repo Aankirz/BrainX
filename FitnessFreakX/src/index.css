@@ -3,7 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer components {
+    button {
+      @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 text-slate-100;
+    }
+    body{
+        @apply text-slate-100
+    }
+    input{
+        @apply text-slate-700
+    }
+    .glassBg{
+        @apply bg-gray-200 bg-opacity-20 rounded-xl backdrop-filter backdrop-blur-xl border-l-stone-100 border-opacity-30
+    }
+}
 body {
     margin: 0;
     padding: 0;
@@ -14,5 +27,5 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #282c34;
-    color: aliceblue;
+    /* color: aliceblue; */
   }

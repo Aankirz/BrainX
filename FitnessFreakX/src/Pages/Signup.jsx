@@ -11,7 +11,11 @@ const Signup = () => {
     const [userDetails,setUserDetails]=useState({
         email:"",
         userName:"",
-        password:""
+        password:"",
+        height:"",
+        weight:"",
+        Age:"",
+        Gender:"",
     })
 
     console.log(userDetails);
@@ -25,11 +29,14 @@ const Signup = () => {
             const newUser=await  account.create(
                 userDetails.userName,
                 userDetails.email,
-                userDetails.password
+                userDetails.password,
+                userDetails.height,
+                userDetails.weight,
+                userDetails.Age,
                 );
 
                await account.createEmailSession(userDetails.email,userDetails.password);
-               navigate('/home');
+               navigate('/dashboard');
                console.log(newUser);     
     
         }catch(e){
@@ -56,6 +63,14 @@ const Signup = () => {
 
                <input type="password" name="" id="password" onChange={(e)=>{setUserDetails({...userDetails,password:e.target.value})}}/>
                
+                <label htmlFor="height">Height</label>
+                <input type="text" id="height" onChange={(e)=>{setUserDetails({...userDetails,height:e.target.value})}}/>
+
+                <label htmlFor="weight">Weight</label>
+                <input type="text" id="weight" onChange={(e)=>{setUserDetails({...userDetails,weight:e.target.value})}}/>
+
+                <label htmlFor="age">Age</label>
+                <input type="text" id="age" onChange={(e)=>{setUserDetails({...userDetails,Age:e.target.value})}}/> 
 
                <button onClick={e=>signUpUser(e)}><input type="submit" value="Submit" /></button>
             </form>
